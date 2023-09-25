@@ -8,8 +8,8 @@ diff --git a/boot/uboot/uboot.mk b/boot/uboot/uboot.mk
 +UBOOT_DEPENDENCIES += rkbin
 +define UBOOT_COPY_ATF_FIRMWARE
 +	echo "Copying BL31"
-+	cp $(BINARIES_DIR)/rkbin/bin/rk35/rk3568_bl31_v[0-9].[0-9][0-9].elf $(@D)/bl31.elf
-+	cp $(BINARIES_DIR)/rkbin/bin/rk35/rk3566_ddr_1056MHz_v[0-9].[0-9][0-9].bin $(@D)/rk3568_ddr_1560MHz_v1.12.bin
++	cp $(NERVES_DEFCONFIG_DIR)/package/rkbin/bin/rk35/rk3568_bl31_v[0-9].[0-9][0-9].elf $(@D)/bl31.elf
++	cp $(NERVES_DEFCONFIG_DIR)/package/rkbin/bin/rk35/rk3566_ddr_1056MHz_v[0-9].[0-9][0-9].bin $(@D)/rk3568_ddr_1560MHz_v1.12.bin
 +endef
 +UBOOT_PRE_BUILD_HOOKS += UBOOT_COPY_ATF_FIRMWARE
 +
