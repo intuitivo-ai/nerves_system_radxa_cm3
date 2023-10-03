@@ -1,10 +1,9 @@
-# Generic RK3566 (Radxa CM3, ~~Pine64 SOQuartz~~) Support
+# Generic RK3566 (Orange Pi CM4) Support
 
 
-This is the base Nerves System configuration for the [Radxa CM3](https://wiki.radxa.com/Rock3/CM/CM3) and ~~[Pine64 SOQuartz](https://wiki.pine64.org/wiki/SOQuartz)~~.
+This is the base Nerves System configuration for the [Orange Pi CM4]([https://wiki.radxa.com/Rock3/CM/CM3](http://www.orangepi.org/html/hardWare/computerAndMicrocontrollers/details/Orange-Pi-CM4-1.html)).
 
-**Note:** The Radxa CM3 configuration is built by default.
-To create a SOQuartz image you have to adapt some config files to point to the correct device tree overlays.
+**Note:** The Orange Pi CM4 configuration is built by default.
 
 
 | Feature              | Description                     |
@@ -33,16 +32,9 @@ This makes it easier to use this repo as a drop-in replacement for the Raspberry
 
 ## Building
 
-### Building for the Radxa CM3
+### Building for the Orange Pi CM4
 
 This is the default configuration. Just call `mix deps.get` and `mix compile`.
-
-### Building for the SOQuartz
-
-1. Adapt the `fdtfile` definition in `uboot/vars.txt` to point to the correct device tree overlay (`rk3566-soquartz-cm4`).
-    - The file is already automatically built and copied to the output directory.
-1. Also don't forget to include the overlay file in `fwup.conf`
-1. Change the `CONFIG_DEFAULT_DEVICE_TREE` definition in `uboot/uboot.defconfig` to `rk3566-soquartz-cm4io`
 
 ## Using
 
